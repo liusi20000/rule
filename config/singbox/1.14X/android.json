@@ -43,6 +43,7 @@
     {"tag": "日本手动", "type": "selector", "outbounds": []},
     {"tag": "狮城手动", "type": "selector", "outbounds": []},
     {"tag": "香港手动", "type": "selector", "outbounds": []},
+    {"tag": "台湾手动", "type": "selector", "outbounds": []},
     {"tag": "美国手动", "type": "selector", "outbounds": []},
     {"tag": "手动选择", "type": "selector", "outbounds": []},
     {"tag": "自动选择", "type": "urltest", "outbounds": [], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
