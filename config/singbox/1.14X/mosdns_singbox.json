@@ -3,7 +3,7 @@
   "dns": {
     "servers": [
       {"tag": "mosdns", "type": "udp", "server": "192.168.50.3"},
-      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.19.0.0/16"},
+      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.19.0.0/16"}
     ],
     "rules": [
       {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
