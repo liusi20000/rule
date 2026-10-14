@@ -3,7 +3,6 @@
   "dns": {
     "servers": [
       {"tag": "local", "type": "local", "prefer_go": true},
-      {"tag": "mosdns", "type": "udp", "server": "192.168.50.3"},
       {"tag": "ali", "type": "https", "server": "223.5.5.5"},
       {"tag": "tx", "type": "https", "server": "doh.pub", "domain_resolver": "hosts"},
       {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "默认代理"},
@@ -11,7 +10,6 @@
       {"type": "hosts", "tag": "hosts", "predefined": {"doh.pub": ["1.12.12.21", "120.53.53.53"]}}
     ],
     "rules": [
-      {"wifi_ssid": ["ASUS_5G"],"server": "mosdns"},
       {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
       {"clash_mode": "Direct", "server": "ali"},
       {"clash_mode": "Global", "server": "fakeip"},
@@ -51,14 +49,13 @@
     {"tag": "自动选择", "type": "urltest", "outbounds": [], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
     {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["默认代理", "AI", "YouTube", "Google", "Github", "Telegram", "TikTok", "Netflix", "Wallet", "Steam", "Microsoft", "OneDrive", "Apple", "漏网之鱼", "日本手动", "狮城手动", "香港手动", "台湾手动", "美国手动", "手动选择", "自动选择", "延迟辅助", "直连"]},
-    {"tag": "直连", "type": "direct"}
+    {"tag": "直连", "type": "direct", "server": "ali"}
   ],
   "http_clients": [
     {"tag": "直连下载", "detour": "直连"}
   ],
   "route": {
     "rules": [
-      {"wifi_ssid": ["ASUS_5G"],"outbound": "直连"},
       {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "直连"},
