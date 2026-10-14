@@ -56,7 +56,7 @@
   ],
   "route": {
     "rules": [
-      {"wifi_ssid": ["ASUS_5G"],"outbound": ""直连"},
+      {"wifi_ssid": ["ASUS_5G"],"outbound": "直连"},
       {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "直连"},
