@@ -3,6 +3,7 @@
   "dns": {
     "servers": [
       {"tag": "local", "type": "local", "prefer_go": true},
+      {"tag": "mosdnds", "type": "udp", "server": "192.168.50.3"},
       {"tag": "ali", "type": "https", "server": "223.5.5.5"},
       {"tag": "tx", "type": "https", "server": "doh.pub", "domain_resolver": "hosts"},
       {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "默认代理"},
@@ -10,6 +11,7 @@
       {"type": "hosts", "tag": "hosts", "predefined": {"doh.pub": ["1.12.12.21", "120.53.53.53"]}}
     ],
     "rules": [
+      {"wifi_ssid": ["ASUS_5G"],"server": "mosdns"},
       {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
       {"clash_mode": "Direct", "server": "ali"},
       {"clash_mode": "Global", "server": "fakeip"},
