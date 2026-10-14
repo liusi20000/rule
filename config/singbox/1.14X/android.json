@@ -85,7 +85,7 @@
       {"rule_set": "geosite-category-cryptocurrency", "outbound": "Wallet"},
       {"rule_set": "geosite-steam@cn", "outbound": "直连"},
       {"rule_set": "geosite-steam", "outbound": "Steam"},
-      {"inbound": "mixed-in", "action": "resolve"},
+
       {"rule_set": "geosite-geolocation-!cn", "outbound": "默认代理"},
       {"rule_set": "geoip-telegram", "outbound": "Telegram"},
       {"rule_set": "geoip-cn", "outbound": "直连"}
@@ -118,12 +118,7 @@
         }
       }
     },
-    {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890
-    }
+
   ],
   "experimental": {
     "cache_file": {
